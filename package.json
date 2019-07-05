@@ -1,0 +1,21 @@
+{
+  "name": "guiwrapper",
+  "productName": "GUIwrapper",
+  "description": "A graphical user interface (GUI) wrapper to launch a command line application",
+  "keywords": [],
+  "main": "./main.js",
+  "version": "0.1.0",
+  "author": "Bjørn Håkon Frodal",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/frodal/GUIwrapper"
+  },
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "^6.0.0-beta.12"
+  }
+}
