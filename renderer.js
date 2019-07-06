@@ -5,12 +5,18 @@
 const {ipcRenderer} = require('electron')
 const {execFile} = require('child_process')
 
+const closeAppBtn = document.getElementById('CloseAppBtn')
 const selectProgramBtn = document.getElementById('SelectProgramBtn')
 const startProgramBtn = document.getElementById('StartProgramBtn')
 const terminateProgramBtn = document.getElementById('TerminateProgramBtn')
 let exePath = ''
 let exeCommandArgs = [''];
 let subProcess = null
+
+closeAppBtn.addEventListener('click', (event)=>
+{
+    ipcRenderer.send('close-app')
+})
 
 ////////////////////////////////////////////////////////////////////////////////////
 //                               Select Program                                   //

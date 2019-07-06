@@ -12,6 +12,7 @@ function createWindow ()
     {
     width: 1280,
     height: 720,
+    frame: false,
     webPreferences: 
         {
             nodeIntegration: true
@@ -64,6 +65,11 @@ app.on('activate', function ()
 // code. You can also put them in separate files and require them here.
 
 const {ipcMain, dialog} = require('electron')
+
+ipcMain.on('close-app', (event)=>
+{
+    mainWindow.close()
+})
 
 // Open file dialog to open file
 ipcMain.on('open-file-dialog', (event)=>
