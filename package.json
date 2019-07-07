@@ -1,8 +1,8 @@
 {
   "name": "guiwrapper",
   "productName": "GUIwrapper",
-  "description": "A graphical user interface (GUI) wrapper to launch a command line application",
-  "keywords": [],
+  "description": "A simple cross platform GUI wrapper to launch executable desktop applications",
+  "keywords": ["GUI","wrapper","cross platform","desktop applications"],
   "main": "./main.js",
   "version": "0.1.0",
   "author": "Bjørn Håkon Frodal",
@@ -12,10 +12,14 @@
     "url": "https://github.com/frodal/GUIwrapper"
   },
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-packager ./ --all --no-tmpdir --out=../GUIwrapperBinaries/",
+    "setup": "electron-installer-windows --src=../GUIwrapperBinaries/GUIwrapper-win32-x64/ --dest=../GUIwrapperBinaries/installers/"
   },
   "dependencies": {},
   "devDependencies": {
-    "electron": "^6.0.0-beta.12"
+    "electron": "^6.0.0-beta.12",
+    "electron-installer-windows": "^2.0.0",
+    "electron-packager": "^14.0.1"
   }
 }
