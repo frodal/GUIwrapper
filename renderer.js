@@ -8,6 +8,7 @@ const {execFile} = require('child_process');
 const selectProgramBtn = document.getElementById('SelectProgramBtn');
 const startProgramBtn = document.getElementById('StartProgramBtn');
 const terminateProgramBtn = document.getElementById('TerminateProgramBtn');
+const inputArgs = document.getElementById('InputArgs');
 let exePath = '';
 let exeCommandArgs = [''];
 let subProcess = null;
@@ -44,6 +45,8 @@ startProgramBtn.addEventListener('click', (event)=>
         {
             // Clear output data field
             document.getElementById('OutputData').innerHTML = '';
+            exeCommandArgs = [inputArgs.value];
+            console.log(exeCommandArgs);
             try // Try to execute the program and sets a callback for when the program terminates
             {
                 subProcess = execFile(exePath, exeCommandArgs, function(err, data)
