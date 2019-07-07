@@ -3,32 +3,55 @@
   <head>
     <meta charset="UTF-8">
     <title>GUIwrapper</title>
+    <link rel="stylesheet" href="./Dependencies/Bootstrap-4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <h1>GUIwrapper</h1>
-    <p>
-        Select an executable application to start!
-    </p>
-    <p>
-      <button id="SelectProgramBtn">Select program!</button>
-    </p>
-    <p>
-        Selected file: 
-        <div id="FilePath" style="font-family: monospace"></div>
-    </p>
-    <p>
-      <button id="StartProgramBtn">Start Program!</button>
-      <button id="TerminateProgramBtn">Terminate Program!</button>
-    </p>
-    <p>
-        Output: 
-        <div id="OutputData" style="font-family: monospace"></div>
-    </p>
-    <!--p>
-        Using Node.js <script>document.write(process.versions.node)</script>,
-        Chromium <script>document.write(process.versions.chrome)</script>,
-        and Electron <script>document.write(process.versions.electron)</script>.
-    </p-->
+    <header id="titlebar">
+        <div id="drag-region">
+  
+          <div id="window-title">
+            <!--span>GUIwrapper</span-->
+          </div>
+  
+          <div id="window-controls">
+            <div class="button" id="min-button">
+              <span>&#xE921;</span>
+            </div>
+            <div class="button" id="max-button">
+              <span>&#xE922;</span>
+            </div>
+            <div class="button" id="restore-button">
+              <span>&#xE923;</span>
+            </div>
+            <div class="button" id="close-button">
+              <span>&#xE8BB;</span>
+            </div>
+  
+          </div>
+        </div>
+      </header>
+    <div class="container" id="main">
+        <h1><span class="badge badge-pill badge-secondary">GUI</span>wrapper</h1>
+        <p class="lead">
+            A simple cross platform graphical user interface wrapper to launch executable desktop applications
+        </p>
+        <p>
+        <button class="btn btn-secondary" id="SelectProgramBtn">Select program!</button>
+        </p>
+        <p>
+            Selected file: 
+            <div id="FilePath" style="font-family: monospace" class="text-light bg-dark"></div>
+        </p>
+        <p>
+            <button class="btn btn-secondary" id="StartProgramBtn">Start Program!</button>
+            <button class="btn btn-secondary" id="TerminateProgramBtn">Terminate Program!</button>
+        </p>
+        <p>
+            Output: 
+            <div id="OutputData" style="font-family: monospace" class="text-light bg-dark"></div>
+        </p>
+    </div>
     <script>
       // You can also require other files to run in this process
       require('./renderer.js')
