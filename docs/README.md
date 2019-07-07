@@ -35,7 +35,7 @@ See [releases](https://github.com/frodal/GUIwrapper/releases) for prebuilt binar
 See [releases](https://github.com/frodal/GUIwrapper/releases) for prebuilt installers
 
 1. Make sure to do steps 1-3 above first
-2. To build the GUIwrapper application, install [Electron-installer-windows](https://github.com/electron-userland/electron-packager) by running `npm install --save-dev electron-installer-windows` using the command line in the GUIwrapper directory
+2. To build the GUIwrapper application, install [Electron-installer-windows](https://github.com/electron-userland/electron-installer-windows) by running `npm install --save-dev electron-installer-windows` using the command line in the GUIwrapper directory
 3. Then run `npm run setup` in the GUIwrapper directory to build the windows installer. Note that this will build to a directory outside of the GUIwrapper directory, i.e., `../GUIwrapperBinaries/installers/`
 
 ## Contributing
