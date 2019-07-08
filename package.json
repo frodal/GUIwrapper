@@ -2,7 +2,12 @@
   "name": "guiwrapper",
   "productName": "GUIwrapper",
   "description": "A simple cross platform GUI wrapper to launch executable desktop applications",
-  "keywords": ["GUI","wrapper","cross platform","desktop applications"],
+  "keywords": [
+    "GUI",
+    "wrapper",
+    "cross platform",
+    "desktop applications"
+  ],
   "main": "./main.js",
   "version": "0.1.0",
   "author": "Bjørn Håkon Frodal",
@@ -14,7 +19,13 @@
   "scripts": {
     "start": "electron .",
     "build": "electron-packager ./ --all --no-tmpdir --out=../GUIwrapperBinaries/",
-    "setup": "electron-installer-windows --src=../GUIwrapperBinaries/GUIwrapper-win32-x64/ --dest=../GUIwrapperBinaries/installers/"
+    "build-win": "electron-packager ./ --platform=win32 --arch=all --no-tmpdir --out=../GUIwrapperBinaries/",
+    "build-win32": "electron-packager ./ --platform=win32 --arch=ia32 --no-tmpdir --out=../GUIwrapperBinaries/",
+    "build-win64": "electron-packager ./ --platform=win32 --arch=x64 --no-tmpdir --out=../GUIwrapperBinaries/",
+    "build-linux64": "electron-packager ./ --platform=linux --arch=x64 --no-tmpdir --out=../GUIwrapperBinaries/",
+    "build-darwin64": "electron-packager ./ --platform=darwin --arch=x64 --no-tmpdir --out=../GUIwrapperBinaries/",
+    "setup": "electron-installer-windows --src=../GUIwrapperBinaries/GUIwrapper-win32-x64/ --dest=../GUIwrapperBinaries/installers/",
+    "setup-win32": "electron-installer-windows --src=../GUIwrapperBinaries/GUIwrapper-win32-ia32/ --dest=../GUIwrapperBinaries/installers/"
   },
   "dependencies": {},
   "devDependencies": {
