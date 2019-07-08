@@ -19,13 +19,15 @@
   "scripts": {
     "start": "electron .",
     "build": "electron-packager ./ --all --no-tmpdir --out=../GUIwrapperBinaries/",
+    "build-debug": "set DEBUG=electron-packager && electron-packager ./ --all --no-tmpdir --out=../GUIwrapperBinaries/",
     "build-win": "electron-packager ./ --platform=win32 --arch=all --no-tmpdir --out=../GUIwrapperBinaries/",
     "build-win32": "electron-packager ./ --platform=win32 --arch=ia32 --no-tmpdir --out=../GUIwrapperBinaries/",
     "build-win64": "electron-packager ./ --platform=win32 --arch=x64 --no-tmpdir --out=../GUIwrapperBinaries/",
     "build-linux64": "electron-packager ./ --platform=linux --arch=x64 --no-tmpdir --out=../GUIwrapperBinaries/",
     "build-darwin64": "electron-packager ./ --platform=darwin --arch=x64 --no-tmpdir --out=../GUIwrapperBinaries/",
-    "setup": "electron-installer-windows --src=../GUIwrapperBinaries/GUIwrapper-win32-x64/ --dest=../GUIwrapperBinaries/installers/",
-    "setup-win32": "electron-installer-windows --src=../GUIwrapperBinaries/GUIwrapper-win32-ia32/ --dest=../GUIwrapperBinaries/installers/"
+    "setup": "electron-installer-windows --src=../GUIwrapperBinaries/GUIwrapper-win32-ia32/ --dest=../GUIwrapperBinaries/installer/",
+    "setup-x64": "electron-installer-windows --src=../GUIwrapperBinaries/GUIwrapper-win32-x64/ --dest=../GUIwrapperBinaries/installer-x64/",
+    "setup-ia32": "electron-installer-windows --src=../GUIwrapperBinaries/GUIwrapper-win32-ia32/ --dest=../GUIwrapperBinaries/installer-ia32/"
   },
   "dependencies": {},
   "devDependencies": {

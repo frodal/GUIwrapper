@@ -30,13 +30,15 @@ See [releases](https://github.com/frodal/GUIwrapper/releases) for prebuilt binar
 2. To build the GUIwrapper application, install [Electron-packager](https://github.com/electron-userland/electron-packager) by running `npm install --save-dev electron-packager` using the command line in the GUIwrapper directory
 3. Then run `npm run build` in the GUIwrapper directory to build for all suported platforms, i.e., Windows, Linux and MacOS. Note that this will build to a directory outside of the GUIwrapper directory, i.e., `../GUIwrapperBinaries/`
 
+Note: To build for only one platform and architecture use the following build commands for; Windows ia32 `npm run build-win32`, Windows x64 `npm run build-win64`, Linux x64 `npm run build-linux64`, and MacOS x64 `npm run build-darwin64`
+
 ### Windows installer
 
 See [releases](https://github.com/frodal/GUIwrapper/releases) for prebuilt installers
 
 1. Make sure to do steps 1-3 above first
 2. To build the GUIwrapper application, install [Electron-installer-windows](https://github.com/electron-userland/electron-installer-windows) by running `npm install --save-dev electron-installer-windows` using the command line in the GUIwrapper directory
-3. Then run `npm run setup` in the GUIwrapper directory to build the windows installer. Note that this will build to a directory outside of the GUIwrapper directory, i.e., `../GUIwrapperBinaries/installers/`
+3. Then run `npm run setup` in the GUIwrapper directory to build the windows installer. Note that this will build to a directory outside of the GUIwrapper directory, i.e., `../GUIwrapperBinaries/installer/`
 
 ## Contributing
 
