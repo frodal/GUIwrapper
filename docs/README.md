@@ -48,7 +48,7 @@ A Linux or MacOS system is required for these steps.
 
 1. First, make sure to do steps 1-3 under the [Build](#Build) section
 2. To make a Debian package for the GUIwrapper application, install [Electron-installer-debian](https://github.com/electron-userland/electron-installer-debian) by running `npm install --save-dev electron-installer-debian` using the command line in the GUIwrapper directory
-3. Then run `npm run setup-debian` in the GUIwrapper directory to build a Linux x64 debian package. Note that this will build to a directory outside of the GUIwrapper directory, i.e., `../GUIwrapperBinaries/debian/`
+3. Then run `electron-installer-debian --src=../GUIwrapperBinaries/GUIwrapper-linux-x64/ --dest=../GUIwrapperBinaries/debian/ --arch=amd64` in the GUIwrapper directory to build a Linux x64 debian package. Note that this will build to a directory outside of the GUIwrapper directory, i.e., `../GUIwrapperBinaries/debian/`
 
 ## Contributing
 
