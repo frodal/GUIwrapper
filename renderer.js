@@ -64,6 +64,9 @@ startProgramBtn.addEventListener('click', (event)=>
                     document.getElementById('OutputData').innerHTML = `${data.toString().replace(/\n/g,'<br/>')}`;
                     subProcess = null;
                 });
+                subProcess.stdout.on('data',function(data) {
+                    document.getElementById('OutputData').innerHTML = `${data.toString().replace(/\n/g,'<br/>')}`;
+                });
             }
             catch(err) // Catches the error if the file selected can't be executed correctly
             {
