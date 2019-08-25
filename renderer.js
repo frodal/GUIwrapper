@@ -12,6 +12,7 @@ const inputArgs = document.getElementById('InputArgs');
 let exePath = '';
 let exeCommandArgs = [''];
 let subProcess = null;
+let stdoutput = '';
 
 ////////////////////////////////////////////////////////////////////////////////////
 //                               Select Program                                   //
@@ -63,6 +64,11 @@ startProgramBtn.addEventListener('click', (event)=>
                     // sets the output data and replacing \n with <br/> performs a global replacement with /\n/g
                     document.getElementById('OutputData').innerHTML = `${data.toString().replace(/\n/g,'<br/>')}`;
                     subProcess = null;
+                    stdoutput = '';
+                });
+                subProcess.stdout.on('data',function(data) {
+                    stdoutput += data.toString().replace(/\n/g,'<br/>');
+                    document.getElementById('OutputData').innerHTML = `${stdoutput}`;
                 });
             }
             catch(err) // Catches the error if the file selected can't be executed correctly
