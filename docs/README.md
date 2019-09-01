@@ -4,7 +4,7 @@
 ![GitHub top language](https://img.shields.io/github/languages/top/frodal/GUIwrapper.svg)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/frodal/GUIwrapper.svg)
 ![GitHub issues](https://img.shields.io/github/issues-raw/frodal/GUIwrapper.svg)
-![GitHub tag (latest by date)](https://img.shields.io/github/tag-date/frodal/GUIwrapper.svg)
+![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/frodal/GUIwrapper?include_prereleases)
 
 A simple cross platform graphical user interface (GUI) wrapper to launch executable desktop applications.
 Buildt with JavaScript, HTML, and CSS.

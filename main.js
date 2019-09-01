@@ -1,5 +1,5 @@
 // Modules to control application life and create native browser window
-const {app, BrowserWindow} = require('electron');
+const {app, BrowserWindow, Menu} = require('electron');
 var path = require('path');
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -13,7 +13,8 @@ function createWindow ()
     {
     width: 1280,
     height: 720,
-    frame: false,
+    frame: process.platform === 'darwin' ? true : false,
+    titleBarStyle: 'hidden',
     icon: path.join(__dirname,'assets/icons/png/64x64.png'),
     show: false,
     backgroundColor: '#FFFFFF',
@@ -42,6 +43,11 @@ function createWindow ()
   mainWindow.once('ready-to-show', () => {
     mainWindow.show()
   });
+
+  // Sets the application menu, i.e., 'File', 'Edit' etc. 
+  // Passing null will suppress the default menu. On Windows and Linux, 
+  // this has the additional effect of removing the menu bar from the window.
+  Menu.setApplicationMenu(null)
 }
 
 // This method will be called when Electron has finished
