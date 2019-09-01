@@ -11,7 +11,7 @@ Buildt with JavaScript, HTML, and CSS.
 Compatible with Windows, Linux and MacOS.
 Download the latest version [here](https://github.com/frodal/GUIwrapper/releases).
 
-![GUIwrapper image](GUIwrapper.png "GUIwrapper")
+<img style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)" src="GUIwrapper.png" />
 
 ## Getting Started
 
