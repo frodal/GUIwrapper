@@ -15,6 +15,8 @@ function createWindow ()
     height: 720,
     frame: false,
     icon: path.join(__dirname,'assets/icons/png/64x64.png'),
+    show: false,
+    backgroundColor: '#FFFFFF',
     webPreferences: 
         {
             nodeIntegration: true
@@ -34,6 +36,11 @@ function createWindow ()
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
     mainWindow = null;
+  });
+
+  // Shows the window once it is loaded and ready to be displayed
+  mainWindow.once('ready-to-show', () => {
+    mainWindow.show()
   });
 }
 
