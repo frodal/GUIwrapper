@@ -4,6 +4,7 @@
 
 const {ipcRenderer} = require('electron');
 const {execFile} = require('child_process');
+var path = require('path');
 
 const selectProgramBtn = document.getElementById('SelectProgramBtn');
 const startProgramBtn = document.getElementById('StartProgramBtn');
@@ -48,13 +49,18 @@ startProgramBtn.addEventListener('click', (event)=>
             document.getElementById('OutputData').innerHTML = '';
             exeCommandArgs = [inputArgs.value];
             console.log(exeCommandArgs);
+            // Sets the current working directory of the selected program to be its own directory
+            options = {cwd: path.dirname(exePath)};
             try // Try to execute the program and sets a callback for when the program terminates
             {
-                subProcess = execFile(exePath, exeCommandArgs, function(err, data)
+                subProcess = execFile(exePath, exeCommandArgs, options, function(err, data)
                 {
                     if(err!==null && !subProcess.killed)
                     {
                         ipcRenderer.send('open-errorEXE-dialog');
+                    }else if(err)
+                    {
+                        ipcRenderer.send('open-errorKilled-dialog')
                     }else
                     {
                         ipcRenderer.send('open-successfulTermination-dialog');
@@ -62,13 +68,20 @@ startProgramBtn.addEventListener('click', (event)=>
                     console.log(err);
                     console.log(data.toString());
                     // sets the output data and replacing \n with <br/> performs a global replacement with /\n/g
-                    document.getElementById('OutputData').innerHTML = `${data.toString().replace(/\n/g,'<br/>')}`;
+                    document.getElementById('OutputData').innerHTML = `${data.toString().replace(/\n/g,'<br/>')+err.toString().replace(/\n/g,'<br/>')}`;
                     subProcess = null;
                     stdoutput = '';
                 });
+                // Standard output callback
                 subProcess.stdout.on('data',function(data) {
                     stdoutput += data.toString().replace(/\n/g,'<br/>');
                     document.getElementById('OutputData').innerHTML = `${stdoutput}`;
+                });
+                // Standard error callback
+                subProcess.stderr.on('data',function(data) {
+                    stdoutput += data.toString().replace(/\n/g,'<br/>');
+                    document.getElementById('OutputData').innerHTML = `${stdoutput}`;
+                    subProcess.kill();
                 });
             }
             catch(err) // Catches the error if the file selected can't be executed correctly

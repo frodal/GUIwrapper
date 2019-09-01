@@ -1,5 +1,6 @@
 // Modules to control application life and create native browser window
-const {app, BrowserWindow} = require('electron');
+const {app, BrowserWindow, Menu} = require('electron');
+var path = require('path');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -12,7 +13,11 @@ function createWindow ()
     {
     width: 1280,
     height: 720,
-    frame: false,
+    frame: process.platform === 'darwin' ? true : false,
+    titleBarStyle: 'hidden',
+    icon: path.join(__dirname,'assets/icons/png/64x64.png'),
+    show: false,
+    backgroundColor: '#FFFFFF',
     webPreferences: 
         {
             nodeIntegration: true
@@ -33,6 +38,16 @@ function createWindow ()
     // when you should delete the corresponding element.
     mainWindow = null;
   });
+
+  // Shows the window once it is loaded and ready to be displayed
+  mainWindow.once('ready-to-show', () => {
+    mainWindow.show()
+  });
+
+  // Sets the application menu, i.e., 'File', 'Edit' etc. 
+  // Passing null will suppress the default menu. On Windows and Linux, 
+  // this has the additional effect of removing the menu bar from the window.
+  Menu.setApplicationMenu(null)
 }
 
 // This method will be called when Electron has finished
@@ -89,6 +104,11 @@ ipcMain.on('open-error-dialog', (event)=>
 ipcMain.on('open-errorEXE-dialog', (event)=>
 {
     dialog.showErrorBox('Error', 'Could not execute the selected program!');
+});
+// Opens an error dialog message
+ipcMain.on('open-errorKilled-dialog', (event)=>
+{
+    dialog.showErrorBox('Error', 'An error occured while executing the program!\nSee the ouput for details.');
 });
 
 // Opens a warning dialog message
