@@ -105,6 +105,11 @@ ipcMain.on('open-errorEXE-dialog', (event)=>
 {
     dialog.showErrorBox('Error', 'Could not execute the selected program!');
 });
+// Opens an error dialog message
+ipcMain.on('open-errorKilled-dialog', (event)=>
+{
+    dialog.showErrorBox('Error', 'An error occured while executing the program!\nSee the ouput for details.');
+});
 
 // Opens a warning dialog message
 ipcMain.on('open-warning-dialog', (event)=>
