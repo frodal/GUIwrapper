@@ -13,7 +13,6 @@ function createWindow ()
     {
     width: 1280,
     height: 720,
-    frame: process.platform === 'darwin' ? true : false,
     titleBarStyle: 'hidden',
     icon: path.join(__dirname,'assets/icons/png/64x64.png'),
     show: false,
