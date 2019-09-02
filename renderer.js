@@ -14,6 +14,7 @@ let exePath = '';
 let exeCommandArgs = [''];
 let subProcess = null;
 let stdoutput = '';
+let killedDueToError = false;
 
 ////////////////////////////////////////////////////////////////////////////////////
 //                               Select Program                                   //
@@ -55,13 +56,14 @@ startProgramBtn.addEventListener('click', (event)=>
                     if(err!==null && !subProcess.killed)
                     {
                         ipcRenderer.send('open-errorEXE-dialog');
-                    }else if(err)
+                    }else if(killedDueToError)
                     {
                         ipcRenderer.send('open-errorKilled-dialog')
                     }else
                     {
                         ipcRenderer.send('open-successfulTermination-dialog');
                     }
+                    killedDueToError = false;
                     subProcess = null;
                     stdoutput = '';
                 });
@@ -79,6 +81,7 @@ startProgramBtn.addEventListener('click', (event)=>
                     stdoutput += data.toString().replace(/\n/g,'<br/>');
                     document.getElementById('OutputData').innerHTML = `${stdoutput}`;
                     subProcess.kill();
+                    killedDueToError = true;
                 });
             }
             catch(err) // Catches the error if the file selected can't be executed correctly
