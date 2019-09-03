@@ -46,7 +46,7 @@ function createWindow ()
   // Sets the application menu, i.e., 'File', 'Edit' etc. 
   // Passing null will suppress the default menu. On Windows and Linux, 
   // this has the additional effect of removing the menu bar from the window.
-  require('./assets/javascript/mainmenu')
+  require('./src/javascript/mainmenu')
 }
 
 // This method will be called when Electron has finished

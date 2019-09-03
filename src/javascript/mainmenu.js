@@ -66,7 +66,7 @@ const template = [
                         "Chrome: "+process.versions.chrome+"\n"+
                         "Node.js: "+process.versions.node,
                 buttons:['Ok'],
-                icon: nativeImage.createFromPath(path.join(__dirname,'../icons/png/64x64.png'))
+                icon: nativeImage.createFromPath(path.join(__dirname,'../../assets/icons/png/64x64.png'))
             });
         }
       }
