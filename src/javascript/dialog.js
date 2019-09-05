@@ -1,9 +1,9 @@
-const {ipcMain, dialog} = require('electron');
+const {ipcMain, dialog, BrowserWindow} = require('electron');
 
 // Open file dialog to open file
 ipcMain.on('open-file-dialog', (event)=>
 {
-  dialog.showOpenDialog(
+  dialog.showOpenDialog(BrowserWindow.getFocusedWindow(), 
       {properties: ['openFile']}, 
       (files)=>
   {
@@ -40,7 +40,7 @@ ipcMain.on('open-warning-dialog', (event)=>
         message:"Please select an executable file first!",
         buttons:['Ok']
     };
-    dialog.showMessageBox(options);
+    dialog.showMessageBox(BrowserWindow.getFocusedWindow(), options);
 });
 
 // Opens a warning dialog message
@@ -53,7 +53,7 @@ ipcMain.on('open-isRunning-dialog', (event)=>
         message:"Please terminate the running application before starting a new one",
         buttons:['Ok']
     };
-    dialog.showMessageBox(options);
+    dialog.showMessageBox(BrowserWindow.getFocusedWindow(), options);
 })
 
 // Opens a success dialog message
@@ -66,5 +66,5 @@ ipcMain.on('open-successfulTermination-dialog', (event)=>
         message:"Application terminated successfully",
         buttons:['Ok']
     };
-    dialog.showMessageBox(options);
+    dialog.showMessageBox(BrowserWindow.getFocusedWindow(), options);
 })
