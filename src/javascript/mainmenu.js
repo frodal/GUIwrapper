@@ -56,7 +56,7 @@ const template = [
       {
         label: 'About',
         click () {
-            dialog.showMessageBox({
+            dialog.showMessageBox(BrowserWindow.getFocusedWindow(), {
                 type:"info",
                 title: app.getName(),
                 message: app.getName()+"\n"+
