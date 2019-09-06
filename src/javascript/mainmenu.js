@@ -1,4 +1,4 @@
-const {app, Menu, shell, dialog, nativeImage} = require('electron');
+const {app, Menu, shell, dialog, nativeImage, BrowserWindow} = require('electron');
 const path = require('path')
 
 const template = [
