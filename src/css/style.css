@@ -22,6 +22,7 @@ input
 {
     -webkit-app-region: no-drag;
     -webkit-user-select: text;
+    white-space: pre;
 }
 /* Scroll bar*/
 ::-webkit-scrollbar
