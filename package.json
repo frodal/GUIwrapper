@@ -9,7 +9,7 @@
     "desktop applications"
   ],
   "main": "./main.js",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "author": "Bjørn Håkon Frodal",
   "license": "MIT",
   "repository": {
