@@ -70,15 +70,13 @@ startProgramBtn.addEventListener('click', (event)=>
                 // Standard output callback
                 subProcess.stdout.on('data',function(data) 
                 {
-                    // sets the output data and replacing \n with <br/> performs a global replacement with /\n/g
-                    stdoutput += data.toString().replace(/\n/g,'<br/>');
+                    stdoutput += data.toString();
                     document.getElementById('OutputData').innerHTML = `${stdoutput}`;
                 });
                 // Standard error callback
                 subProcess.stderr.on('data',function(data) 
                 {
-                    // sets the output data and replacing \n with <br/> performs a global replacement with /\n/g
-                    stdoutput += data.toString().replace(/\n/g,'<br/>');
+                    stdoutput += data.toString();
                     document.getElementById('OutputData').innerHTML = `${stdoutput}`;
                     subProcess.kill();
                     killedDueToError = true;
@@ -88,8 +86,7 @@ startProgramBtn.addEventListener('click', (event)=>
             {
                 subProcess = null;
                 ipcRenderer.send('open-error-dialog');
-                // sets the output data and replacing \n with <br/> performs a global replacement with /\n/g
-                document.getElementById('OutputData').innerHTML = `${err.toString().replace(/\n/g,'<br/>')} <br/>`;
+                document.getElementById('OutputData').innerHTML = `${err.toString()}`;
             }
         }
     }else

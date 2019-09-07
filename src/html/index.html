@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <title>GUIwrapper</title>
-    <link rel="stylesheet" href="./Dependencies/Bootstrap-4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="../../Dependencies/Bootstrap-4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
     <div class="container" id="main">
@@ -13,11 +13,11 @@
             A simple cross platform graphical user interface wrapper to launch executable desktop applications
         </p>
         <p>
-        <button class="btn btn-secondary" id="SelectProgramBtn">Select program!</button>
+        <button class="btn btn-secondary" id="SelectProgramBtn">Select</button>
         </p>
         <p>
             Selected file: 
-            <div id="FilePath" style="font-family: monospace" class="text-light bg-dark"></div>
+            <div id="FilePath" class="text-light bg-dark"></div>
         </p>
         <p>
             Additional input arguments:
@@ -29,17 +29,17 @@
             </div>
         </p>
         <p>
-            <button class="btn btn-secondary" id="StartProgramBtn">Start Program!</button>
-            <button class="btn btn-secondary" id="TerminateProgramBtn">Terminate Program!</button>
+            <button class="btn btn-secondary" id="StartProgramBtn">Start</button>
+            <button class="btn btn-secondary" id="TerminateProgramBtn">Terminate</button>
         </p>
         <p>
             Output: 
-            <div id="OutputData" style="font-family: monospace" class="text-light bg-dark"></div>
+            <div id="OutputData" class="text-light bg-dark"></div>
         </p>
     </div>
     <script>
       // You can also require other files to run in this process
-      require('./renderer.js')
+      require('../javascript/renderer.js')
     </script>
   </body>
 </html>

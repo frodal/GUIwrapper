@@ -1,8 +1,11 @@
+/* Import Montserrat font */
+@import url("../../Dependencies/Montserrat/fonts/webfonts/Montserrat.css");
 /* Main content area */
 #main 
 {
     padding: 32px;
-    padding-top: 64px;
+    padding-top: 48px;
+    font-family: 'Montserrat'
 }
 /* Draggable and selectable regions */
 body
@@ -20,8 +23,10 @@ input
 }
 #OutputData, #FilePath
 {
+    font-family: monospace;
     -webkit-app-region: no-drag;
     -webkit-user-select: text;
+    white-space: pre;
 }
 /* Scroll bar*/
 ::-webkit-scrollbar
