@@ -1,0 +1,3 @@
+[submodule "Dependencies/Montserrat"]
+	path = Dependencies/Montserrat
+	url = https://github.com/JulietaUla/Montserrat.git
