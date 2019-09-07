@@ -1,9 +1,11 @@
+/* Import Monserrat font */
+@import url("../../Dependencies/Monserrat/fonts/webfonts/Montserrat.css");
 /* Main content area */
 #main 
 {
     padding: 32px;
     padding-top: 64px;
-    font-family: 'Segoe UI'
+    font-family: 'Montserrat'
 }
 /* Draggable and selectable regions */
 body
@@ -21,6 +23,7 @@ input
 }
 #OutputData, #FilePath
 {
+    font-family: monospace;
     -webkit-app-region: no-drag;
     -webkit-user-select: text;
     white-space: pre;
