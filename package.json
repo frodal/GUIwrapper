@@ -27,7 +27,8 @@
     "build-darwin64": "electron-packager ./ --overwrite --asar --prune=true --platform=darwin --arch=x64 --no-tmpdir --icon=assets/icons/mac/icon.icns --out=../GUIwrapperBinaries/ --darwinDarkModeSupport=true",
     "setup": "electron-installer-windows --src=../GUIwrapperBinaries/GUIwrapper-win32-ia32/ --dest=../GUIwrapperBinaries/installer/",
     "setup-win32": "electron-installer-windows --src=../GUIwrapperBinaries/GUIwrapper-win32-ia32/ --dest=../GUIwrapperBinaries/installer-ia32/",
-    "setup-win64": "electron-installer-windows --src=../GUIwrapperBinaries/GUIwrapper-win32-x64/ --dest=../GUIwrapperBinaries/installer-x64/"
+    "setup-win64": "electron-installer-windows --src=../GUIwrapperBinaries/GUIwrapper-win32-x64/ --dest=../GUIwrapperBinaries/installer-x64/",
+    "setup-debian": "electron-installer-debian --src=../GUIwrapperBinaries/GUIwrapper-linux-x64/ --dest=../GUIwrapperBinaries/debian/ --arch=amd64"
   },
   "dependencies": {},
   "devDependencies": {
