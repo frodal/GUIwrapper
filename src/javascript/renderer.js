@@ -29,6 +29,7 @@ ipcRenderer.on('SelectedFile', (event, path)=>
 {
     document.getElementById('FilePath').innerHTML = `${path.toString()}`;
     exePath = path.toString();
+    startProgramBtn.disabled = exePath==='';
 });
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -49,6 +50,9 @@ startProgramBtn.addEventListener('click', (event)=>
             exeCommandArgs = [inputArgs.value];
             // Sets the current working directory of the selected program to be its own directory
             options = {cwd: path.dirname(exePath)};
+            // disable start button and enable terminate button when program is running
+            startProgramBtn.disabled = true;
+            terminateProgramBtn.disabled = false;
             try // Try to execute the program and sets a callback for when the program terminates
             {
                 subProcess = execFile(exePath, exeCommandArgs, options, function(err, data)
@@ -66,6 +70,8 @@ startProgramBtn.addEventListener('click', (event)=>
                     killedDueToError = false;
                     subProcess = null;
                     stdoutput = '';
+                    startProgramBtn.disabled = exePath==='';
+                    terminateProgramBtn.disabled = true;
                 });
                 // Standard output callback
                 subProcess.stdout.on('data',function(data) 
@@ -85,6 +91,8 @@ startProgramBtn.addEventListener('click', (event)=>
             catch(err) // Catches the error if the file selected can't be executed correctly
             {
                 subProcess = null;
+                startProgramBtn.disabled = exePath==='';
+                terminateProgramBtn.disabled = true;
                 ipcRenderer.send('open-error-dialog');
                 document.getElementById('OutputData').innerHTML = `${err.toString()}`;
             }
