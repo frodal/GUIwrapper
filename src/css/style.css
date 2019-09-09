@@ -28,6 +28,10 @@ input
     -webkit-user-select: text;
     white-space: pre;
 }
+.btn-container
+{
+    height:32px;
+}
 /* Scroll bar*/
 ::-webkit-scrollbar
 {
