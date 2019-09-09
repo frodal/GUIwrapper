@@ -28,6 +28,16 @@ input
     -webkit-user-select: text;
     white-space: pre;
 }
+.btn-container
+{
+    display: flex;
+    align-items: center;
+    height:32px;
+}
+.btn-container button
+{
+    margin-right: 6px;
+}
 /* Scroll bar*/
 ::-webkit-scrollbar
 {
