@@ -5,6 +5,7 @@
     <title>GUIwrapper</title>
     <link rel="stylesheet" href="../../Dependencies/Bootstrap-4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/roller.css" />
   </head>
   <body>
     <div class="container" id="main">
@@ -29,8 +30,12 @@
             </div>
         </p>
         <p>
-            <button class="btn btn-secondary" id="StartProgramBtn">Start</button>
-            <button class="btn btn-secondary" id="TerminateProgramBtn">Terminate</button>
+            <div class="btn-container">
+                <button class="btn btn-secondary" id="StartProgramBtn" disabled>Start</button>
+                <button class="btn btn-secondary" id="TerminateProgramBtn" disabled>Terminate</button>
+                <span id="running"></span>
+                <div id="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            </div>
         </p>
         <p>
             Output: 

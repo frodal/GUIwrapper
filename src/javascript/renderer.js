@@ -10,6 +10,11 @@ const selectProgramBtn = document.getElementById('SelectProgramBtn');
 const startProgramBtn = document.getElementById('StartProgramBtn');
 const terminateProgramBtn = document.getElementById('TerminateProgramBtn');
 const inputArgs = document.getElementById('InputArgs');
+const roller = document.getElementById('lds-roller');
+const runMsg = document.getElementById('running');
+const outArea = document.getElementById('OutputData');
+const filePathArea = document.getElementById('FilePath');
+
 let exePath = '';
 let exeCommandArgs = [''];
 let subProcess = null;
@@ -27,8 +32,9 @@ selectProgramBtn.addEventListener('click', (event)=>
 // Sets the executable filepath received from the main process (main.js)
 ipcRenderer.on('SelectedFile', (event, path)=>
 {
-    document.getElementById('FilePath').innerHTML = `${path.toString()}`;
+    filePathArea.innerHTML = `${path.toString()}`;
     exePath = path.toString();
+    startProgramBtn.disabled = exePath==='';
 });
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -45,10 +51,15 @@ startProgramBtn.addEventListener('click', (event)=>
         }else
         {
             // Clear output data field
-            document.getElementById('OutputData').innerHTML = '';
+            outArea.innerHTML = '';
             exeCommandArgs = [inputArgs.value];
             // Sets the current working directory of the selected program to be its own directory
             options = {cwd: path.dirname(exePath)};
+            // disable start button and enable terminate button when program is running
+            startProgramBtn.disabled = true;
+            terminateProgramBtn.disabled = false;
+            roller.classList.add('lds-roller');
+            runMsg.innerHTML = 'Running';
             try // Try to execute the program and sets a callback for when the program terminates
             {
                 subProcess = execFile(exePath, exeCommandArgs, options, function(err, data)
@@ -66,18 +77,22 @@ startProgramBtn.addEventListener('click', (event)=>
                     killedDueToError = false;
                     subProcess = null;
                     stdoutput = '';
+                    startProgramBtn.disabled = exePath==='';
+                    terminateProgramBtn.disabled = true;
+                    roller.classList.remove('lds-roller');
+                    runMsg.innerHTML = '';
                 });
                 // Standard output callback
                 subProcess.stdout.on('data',function(data) 
                 {
                     stdoutput += data.toString();
-                    document.getElementById('OutputData').innerHTML = `${stdoutput}`;
+                    outArea.innerHTML = `${stdoutput}`;
                 });
                 // Standard error callback
                 subProcess.stderr.on('data',function(data) 
                 {
                     stdoutput += data.toString();
-                    document.getElementById('OutputData').innerHTML = `${stdoutput}`;
+                    outArea.innerHTML = `${stdoutput}`;
                     subProcess.kill();
                     killedDueToError = true;
                 });
@@ -85,8 +100,12 @@ startProgramBtn.addEventListener('click', (event)=>
             catch(err) // Catches the error if the file selected can't be executed correctly
             {
                 subProcess = null;
+                startProgramBtn.disabled = exePath==='';
+                terminateProgramBtn.disabled = true;
+                roller.classList.remove('lds-roller');
+                runMsg.innerHTML = '';
                 ipcRenderer.send('open-error-dialog');
-                document.getElementById('OutputData').innerHTML = `${err.toString()}`;
+                outArea.innerHTML = `${err.toString()}`;
             }
         }
     }else
