@@ -71,14 +71,14 @@ const template = [
       },
       {
         label: 'Learn More',
-        click () { shell.openExternal('https://github.com/frodal/GUIwrapper') }
+        click () { shell.openExternal('https://github.com/frodal/GUIwrapper#gui-wrapper') }
       },
       {
         type: 'separator'
       },
       {
         label: 'Check for Updates',
-        click () { shell.openExternal('https://github.com/frodal/GUIwrapper/releases') }
+        click () { shell.openExternal('https://github.com/frodal/GUIwrapper/releases/latest') }
       },
       {
         type: 'separator'
