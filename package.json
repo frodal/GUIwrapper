@@ -37,7 +37,7 @@
     "electron-squirrel-startup": "^1.0.0"
   },
   "devDependencies": {
-    "electron": "^6.0.10",
+    "electron": "^6.1.2",
     "electron-installer-windows": "^2.0.0",
     "electron-packager": "^14.0.6",
     "icon-gen": "^2.0.0"
