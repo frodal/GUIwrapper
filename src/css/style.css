@@ -1,5 +1,9 @@
 /* Import Montserrat font */
 @import url("../../Dependencies/Montserrat/fonts/webfonts/Montserrat.css");
+html 
+{
+    overflow-y: scroll;
+}
 /* Main content area */
 #main 
 {
@@ -21,12 +25,15 @@ input
 {
     -webkit-app-region: no-drag;
 }
-#OutputData, #FilePath
+.textfile
 {
     font-family: monospace;
     -webkit-app-region: no-drag;
     -webkit-user-select: text;
     white-space: pre;
+    width: fit-content;
+    padding-right: 5px;
+    padding-left: 5px;
 }
 .btn-container
 {

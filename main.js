@@ -1,3 +1,5 @@
+// Handle installation, update and uninstall events
+if (require('electron-squirrel-startup')) return;
 // Modules to control application life and create native browser window
 const {app, BrowserWindow} = require('electron');
 var path = require('path');
