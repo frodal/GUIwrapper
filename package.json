@@ -28,12 +28,18 @@
     "setup": "electron-installer-windows --src=../GUIwrapperBinaries/GUIwrapper-win32-ia32/ --dest=../GUIwrapperBinaries/installer/",
     "setup-win32": "electron-installer-windows --src=../GUIwrapperBinaries/GUIwrapper-win32-ia32/ --dest=../GUIwrapperBinaries/installer-ia32/",
     "setup-win64": "electron-installer-windows --src=../GUIwrapperBinaries/GUIwrapper-win32-x64/ --dest=../GUIwrapperBinaries/installer-x64/",
-    "setup-debian": "electron-installer-debian --src=../GUIwrapperBinaries/GUIwrapper-linux-x64/ --dest=../GUIwrapperBinaries/debian/ --arch=amd64"
+    "setup-debian": "electron-installer-debian --src=../GUIwrapperBinaries/GUIwrapper-linux-x64/ --dest=../GUIwrapperBinaries/debian/ --arch=amd64",
+    "gen-icons": "npm run gen-icon-win && npm run gen-icon-mac",
+    "gen-icon-win": "icon-gen --input ./assets/icons/Icon.svg --output ./assets/icons/win --ico name=icon --report",
+    "gen-icon-mac": "icon-gen --input ./assets/icons/Icon.svg --output ./assets/icons/mac --icns name=icon --report"
   },
-  "dependencies": {},
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
+  },
   "devDependencies": {
     "electron": "^6.0.10",
     "electron-installer-windows": "^2.0.0",
-    "electron-packager": "^14.0.6"
+    "electron-packager": "^14.0.6",
+    "icon-gen": "^2.0.0"
   }
 }
