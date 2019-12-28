@@ -17,7 +17,7 @@ Download the latest version [here](https://github.com/frodal/GUIwrapper/releases
 
 To get a local copy up and running follow these simple steps.
 
-1. Clone the project or download from Github (`git clone https://github.com/frodal/GUIwrapper.git`)
+1. Clone the project or download from Github (`git clone --recursive https://github.com/frodal/GUIwrapper.git`)
 2. Install [Node.js](https://nodejs.org) and on the screen that allows you to configure the installation, make sure to select the `Node.js runtime`, `npm package manager`, and `Add to PATH` options
 3. Install the required packages/dependencies such as [Electron](https://electronjs.org/docs/tutorial/first-app#installing-electron) and [Electron-packager](https://github.com/electron-userland/electron-packager) by running `npm install` using the command line in the GUIwrapper directory
 4. Then run `npm start` in the GUIwrapper directory to start the GUIwrapper application
