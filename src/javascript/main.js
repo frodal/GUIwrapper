@@ -16,7 +16,7 @@ function createWindow ()
     width: 1280,
     height: 720,
     titleBarStyle: 'hidden',
-    icon: path.join(__dirname,'assets/icons/png/64x64.png'),
+    icon: path.join(__dirname,'../../assets/icons/png/64x64.png'),
     show: false,
     backgroundColor: '#FFFFFF',
     webPreferences: 
@@ -26,7 +26,7 @@ function createWindow ()
     });
 
   // and load the index.html of the app.
-  mainWindow.loadFile('./src/html/index.html');
+  mainWindow.loadFile(path.join(__dirname,'../html/index.html'));
 
   // Open the DevTools.
   //mainWindow.webContents.openDevTools()
@@ -48,7 +48,7 @@ function createWindow ()
   // Sets the application menu, i.e., 'File', 'Edit' etc. 
   // Passing null will suppress the default menu. On Windows and Linux, 
   // this has the additional effect of removing the menu bar from the window.
-  require('./src/javascript/mainmenu')
+  require('./mainmenu')
 }
 
 // This method will be called when Electron has finished
@@ -79,4 +79,4 @@ app.on('activate', function ()
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
-require('./src/javascript/dialog');
+require('./dialog');
