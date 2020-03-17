@@ -1,17 +1,16 @@
 const {ipcMain, dialog, BrowserWindow} = require('electron');
 
 // Open file dialog to open file
-ipcMain.on('open-file-dialog', (event)=>
-{
-  dialog.showOpenDialog(BrowserWindow.getFocusedWindow(), 
-      {properties: ['openFile']}, 
-      (files)=>
-  {
-      if(files)
-      {
-          event.sender.send('SelectedFile', files);
-      }
-  });
+ipcMain.on('open-file-dialog', (event) => {
+    dialog.showOpenDialog(BrowserWindow.getFocusedWindow(),
+        {
+            filters: [{ name: 'All files', extensions: ['*'] }],
+            properties: ['openFile']
+        }).then((files) => {
+            if (!files.canceled) {
+                event.sender.send('SelectedFile', files.filePaths);
+            }
+        });
 });
 
 // Opens an error dialog message

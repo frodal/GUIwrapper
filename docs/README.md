@@ -74,9 +74,9 @@ Linux:
 
 ## Update dependencies
 
-* Install/update [Electron](https://electronjs.org/docs/tutorial/first-app#installing-electron) by running `npm install --save-dev electron` using the command line in the GUIwrapper directory
-* Install/update [Electron-packager](https://github.com/electron-userland/electron-packager) by running `npm install --save-dev electron-packager` using the command line in the GUIwrapper directory
-* Install/update [Electron-installer-windows](https://github.com/electron-userland/electron-installer-windows) by running `npm install --save-dev electron-installer-windows` using the command line in the GUIwrapper directory
+* Install/update [Electron](https://electronjs.org/docs/tutorial/first-app#installing-electron) by running `npm install --save-dev electron@latest` using the command line in the GUIwrapper directory
+* Install/update [Electron-packager](https://github.com/electron-userland/electron-packager) by running `npm install --save-dev electron-packager@latest` using the command line in the GUIwrapper directory
+* Install/update [Electron-installer-windows](https://github.com/electron-userland/electron-installer-windows) by running `npm install --save-dev electron-installer-windows@latest` using the command line in the GUIwrapper directory
 
 ## Contributing
 
