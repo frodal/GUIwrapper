@@ -1,50 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <title>GUIwrapper</title>
     <link rel="stylesheet" href="../../Dependencies/Bootstrap-4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/roller.css" />
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="container" id="main">
         <h1><span class="badge badge-pill badge-secondary">GUI</span>wrapper</h1>
         <p class="lead">
             A simple cross platform graphical user interface wrapper to launch executable desktop applications
         </p>
         <p>
-        <button class="btn btn-secondary" id="SelectProgramBtn">Select</button>
+            <button class="btn btn-secondary" id="SelectProgramBtn">Select</button>
         </p>
         <p>
-            Selected file: 
-            <div id="FilePath" class="text-light bg-dark textfile"></div>
+            Selected file:
+        <div id="FilePath" class="text-light bg-dark textfile"></div>
         </p>
         <p>
             Additional input arguments:
-            <div class="input-group mb-3 w-50">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">$</span>
-                </div>
-                <input type="text" class="form-control" maxlength="50" id="InputArgs">
+        <div class="input-group mb-3 w-50">
+            <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
             </div>
+            <input type="text" class="form-control" maxlength="50" id="InputArgs">
+        </div>
         </p>
         <p>
-            <div class="btn-container">
-                <button class="btn btn-secondary" id="StartProgramBtn" disabled>Start</button>
-                <button class="btn btn-secondary" id="TerminateProgramBtn" disabled>Terminate</button>
-                <span id="running"></span>
-                <div id="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        <div class="btn-container">
+            <button class="btn btn-secondary" id="StartProgramBtn" disabled>Start</button>
+            <button class="btn btn-secondary" id="TerminateProgramBtn" disabled>Terminate</button>
+            <span id="running"></span>
+            <div id="lds-roller">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
+        </div>
         </p>
         <p>
-            Output: 
-            <div id="OutputData" class="text-light bg-dark textfile"></div>
+            Output:
+        <div id="OutputData" class="text-light bg-dark textfile"></div>
         </p>
     </div>
     <script>
-      // You can also require other files to run in this process
-      require('../javascript/renderer.js')
+        // You can also require other files to run in this process
+        require('../javascript/renderer.js')
     </script>
-  </body>
+</body>
+
 </html>

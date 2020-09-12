@@ -1,45 +1,45 @@
 {
-  "name": "guiwrapper",
-  "productName": "GUIwrapper",
-  "description": "A simple cross platform GUI wrapper to launch executable desktop applications",
-  "keywords": [
-    "GUI",
-    "wrapper",
-    "cross platform",
-    "desktop applications"
-  ],
-  "main": "./src/javascript/main.js",
-  "version": "0.4.2",
-  "author": "Bjørn Håkon Frodal",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/frodal/GUIwrapper"
-  },
-  "scripts": {
-    "start": "electron .",
-    "build": "npm run build-win && npm run build-linux64 && npm run build-darwin64",
-    "build-debug": "set DEBUG=electron-packager && npm run build",
-    "build-win": "electron-packager ./ --overwrite --asar --prune=true --platform=win32 --arch=all --no-tmpdir --icon=assets/icons/win/icon.ico --out=../GUIwrapperBinaries/",
-    "build-win32": "electron-packager ./ --overwrite --asar --prune=true --platform=win32 --arch=ia32 --no-tmpdir --icon=assets/icons/win/icon.ico --out=../GUIwrapperBinaries/",
-    "build-win64": "electron-packager ./ --overwrite --asar --prune=true --platform=win32 --arch=x64 --no-tmpdir --icon=assets/icons/win/icon.ico --out=../GUIwrapperBinaries/",
-    "build-linux64": "electron-packager ./ --overwrite --asar --prune=true --platform=linux --arch=x64 --no-tmpdir --icon=assets/icons/png/1024x1024.png --out=../GUIwrapperBinaries/",
-    "build-darwin64": "electron-packager ./ --overwrite --asar --prune=true --platform=darwin --arch=x64 --no-tmpdir --icon=assets/icons/mac/icon.icns --out=../GUIwrapperBinaries/ --darwinDarkModeSupport=true",
-    "setup": "electron-installer-windows --src=../GUIwrapperBinaries/GUIwrapper-win32-ia32/ --dest=../GUIwrapperBinaries/installer/",
-    "setup-win32": "electron-installer-windows --src=../GUIwrapperBinaries/GUIwrapper-win32-ia32/ --dest=../GUIwrapperBinaries/installer-ia32/",
-    "setup-win64": "electron-installer-windows --src=../GUIwrapperBinaries/GUIwrapper-win32-x64/ --dest=../GUIwrapperBinaries/installer-x64/",
-    "setup-debian": "electron-installer-debian --src=../GUIwrapperBinaries/GUIwrapper-linux-x64/ --dest=../GUIwrapperBinaries/debian/ --arch=amd64",
-    "gen-icons": "npm run gen-icon-win && npm run gen-icon-mac",
-    "gen-icon-win": "icon-gen --input ./assets/icons/Icon.svg --output ./assets/icons/win --ico name=icon --report",
-    "gen-icon-mac": "icon-gen --input ./assets/icons/Icon.svg --output ./assets/icons/mac --icns name=icon --report"
-  },
-  "dependencies": {
-    "electron-squirrel-startup": "^1.0.0"
-  },
-  "devDependencies": {
-    "electron": "^10.1.1",
-    "electron-installer-windows": "^3.0.0",
-    "electron-packager": "^15.1.0",
-    "icon-gen": "^2.0.0"
-  }
+    "name": "guiwrapper",
+    "productName": "GUIwrapper",
+    "description": "A simple cross platform GUI wrapper to launch executable desktop applications",
+    "keywords": [
+        "GUI",
+        "wrapper",
+        "cross platform",
+        "desktop applications"
+    ],
+    "main": "./src/javascript/main.js",
+    "version": "0.4.2",
+    "author": "Bjørn Håkon Frodal",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/frodal/GUIwrapper"
+    },
+    "scripts": {
+        "start": "electron .",
+        "build": "npm run build-win && npm run build-linux64 && npm run build-darwin64",
+        "build-debug": "set DEBUG=electron-packager && npm run build",
+        "build-win": "electron-packager ./ --overwrite --asar --prune=true --platform=win32 --arch=all --no-tmpdir --icon=assets/icons/win/icon.ico --out=../GUIwrapperBinaries/",
+        "build-win32": "electron-packager ./ --overwrite --asar --prune=true --platform=win32 --arch=ia32 --no-tmpdir --icon=assets/icons/win/icon.ico --out=../GUIwrapperBinaries/",
+        "build-win64": "electron-packager ./ --overwrite --asar --prune=true --platform=win32 --arch=x64 --no-tmpdir --icon=assets/icons/win/icon.ico --out=../GUIwrapperBinaries/",
+        "build-linux64": "electron-packager ./ --overwrite --asar --prune=true --platform=linux --arch=x64 --no-tmpdir --icon=assets/icons/png/1024x1024.png --out=../GUIwrapperBinaries/",
+        "build-darwin64": "electron-packager ./ --overwrite --asar --prune=true --platform=darwin --arch=x64 --no-tmpdir --icon=assets/icons/mac/icon.icns --out=../GUIwrapperBinaries/ --darwinDarkModeSupport=true",
+        "setup": "electron-installer-windows --src=../GUIwrapperBinaries/GUIwrapper-win32-ia32/ --dest=../GUIwrapperBinaries/installer/",
+        "setup-win32": "electron-installer-windows --src=../GUIwrapperBinaries/GUIwrapper-win32-ia32/ --dest=../GUIwrapperBinaries/installer-ia32/",
+        "setup-win64": "electron-installer-windows --src=../GUIwrapperBinaries/GUIwrapper-win32-x64/ --dest=../GUIwrapperBinaries/installer-x64/",
+        "setup-debian": "electron-installer-debian --src=../GUIwrapperBinaries/GUIwrapper-linux-x64/ --dest=../GUIwrapperBinaries/debian/ --arch=amd64",
+        "gen-icons": "npm run gen-icon-win && npm run gen-icon-mac",
+        "gen-icon-win": "icon-gen --input ./assets/icons/Icon.svg --output ./assets/icons/win --ico name=icon --report",
+        "gen-icon-mac": "icon-gen --input ./assets/icons/Icon.svg --output ./assets/icons/mac --icns name=icon --report"
+    },
+    "dependencies": {
+        "electron-squirrel-startup": "^1.0.0"
+    },
+    "devDependencies": {
+        "electron": "^10.1.1",
+        "electron-installer-windows": "^3.0.0",
+        "electron-packager": "^15.1.0",
+        "icon-gen": "^2.0.0"
+    }
 }
