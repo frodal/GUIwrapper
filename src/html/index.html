@@ -7,11 +7,16 @@
     <link rel="stylesheet" href="../../Dependencies/Bootstrap-4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/roller.css" />
+    <link rel="stylesheet" href="../css/dark-mode.css" />
 </head>
 
 <body>
     <div class="container" id="main">
         <h1><span class="badge badge-pill badge-secondary">GUI</span>wrapper</h1>
+        <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="darkSwitch" />
+            <label class="custom-control-label" for="darkSwitch">Dark Mode</label>
+        </div>
         <p class="lead">
             A simple cross platform graphical user interface wrapper to launch executable desktop applications
         </p>
@@ -56,6 +61,7 @@
     <script>
         // You can also require other files to run in this process
         require('../javascript/renderer.js')
+        require('dark-mode-switch');
     </script>
 </body>
 

@@ -1,0 +1,81 @@
+/* CSS variables used in dark mode */
+:root {
+    --dark-mode-bg-color: rgb(30, 30, 30);
+    --dark-mode-input-color: rgb(45, 45, 45);
+    --dark-mode-btn-color: rgb(60, 60, 60);
+    --dark-mode-text-color: rgb(190, 190, 190);
+}
+
+/* Set the color of the body element in dark mode */
+[data-theme='dark'] {
+    background-color: var(--dark-mode-bg-color) !important;
+    color: var(--dark-mode-text-color) !important;
+}
+
+/* Set the color of the bg-dark class in dark mode */
+[data-theme='dark'] .bg-dark {
+    background-color: var(--dark-mode-input-color) !important;
+}
+
+/* Set the color of the text-light class in dark mode */
+[data-theme='dark'] .text-light {
+    color: var(--dark-mode-text-color) !important;
+}
+
+/* Set the color of the text input fields in dark mode */
+[data-theme='dark'] input[type='text'] {
+    background-color: var(--dark-mode-input-color) !important;
+    border-color: var(--dark-mode-btn-color) !important;
+    color: var(--dark-mode-text-color) !important;
+}
+[data-theme='dark'] .input-group-text {
+    background-color: var(--dark-mode-bg-color) !important;
+    border-color: var(--dark-mode-btn-color) !important;
+    color: var(--dark-mode-text-color) !important;
+}
+
+/* Set the color of the dropdown menu in dark mode */
+[data-theme='dark'] .form-control {
+    background-color: var(--dark-mode-input-color) !important;
+    border-color: var(--dark-mode-btn-color) !important;
+    color: var(--dark-mode-text-color) !important;
+}
+
+/* Set the color of the buttons in dark mode */
+[data-theme='dark'] .btn-secondary {
+    background-color: var(--dark-mode-btn-color) !important;
+    border-color: var(--dark-mode-btn-color) !important;
+    color: var(--dark-mode-text-color) !important;
+}
+[data-theme='dark'] .btn-secondary:hover:enabled {
+    background-color: var(--dark-mode-input-color) !important;
+    border-color: var(--dark-mode-input-color) !important;
+}
+
+/* Set the color of the GUI badge */
+[data-theme='dark'] .badge-secondary {
+    background-color: var(--dark-mode-btn-color) !important;
+    color: var(--dark-mode-text-color) !important;
+}
+
+/* Set the color of the roller in dark mode */
+[data-theme='dark'] .lds-roller div:after {
+    background: var(--dark-mode-text-color) !important;
+}
+
+/* Set the scrollbar color in dark mode */
+[data-theme='dark']::-webkit-scrollbar-thumb {
+    background-color: var(--dark-mode-btn-color);
+}
+[data-theme='dark']::-webkit-scrollbar-thumb:hover {
+    background: var(--dark-mode-input-color);
+}
+
+/* On screens that are 450px or greater */
+@media screen and (min-width: 450px) {
+    /* Position the dark mode button to the right */
+    .custom-switch {
+        margin-left: 1em;
+        float: right;
+    }
+}
