@@ -36,9 +36,7 @@ Note: To build for only one platform and architecture use the following build co
 See [releases](https://github.com/frodal/GUIwrapper/releases) for prebuilt installers
 
 1. First, make sure to do steps 1-2 under the [Build](#Build) section
-2. Then run `npm run setup` in the GUIwrapper directory to build the windows installer. Note that this will build to a directory outside of the GUIwrapper directory, i.e., `../GUIwrapperBinaries/installer/`
-
-Note: `npm run setup` will create an ia32 (x86) windows installer, for x64 use `npm run setup-win64` instead
+2. Then run `npm run setup` in the GUIwrapper directory to build the windows installer. Note that this will build to a directory outside of the GUIwrapper directory, i.e., `../GUIwrapperBinaries/`
 
 ### Debian package
 
@@ -46,7 +44,7 @@ A Linux or MacOS system is required for these steps.
 
 1. First, make sure to do steps 1-2 under the [Build](#Build) section
 2. To make a Debian package for the GUIwrapper application, install [Electron-installer-debian](https://github.com/electron-userland/electron-installer-debian) by running `npm install --save-dev electron-installer-debian` using the command line in the GUIwrapper directory
-3. Then run `npm run setup-debian` in the GUIwrapper directory to build a Linux x64 debian package. Note that this will build to a directory outside of the GUIwrapper directory, i.e., `../GUIwrapperBinaries/debian/`
+3. Then run `npm run setup-debian` in the GUIwrapper directory to build a Linux x64 debian package. Note that this will build to a directory outside of the GUIwrapper directory, i.e., `../GUIwrapperBinaries/`
 
 ### Distributable creators
 
@@ -74,6 +72,7 @@ Linux:
 
 ## Update dependencies
 
+* Update all GUI dependencies by running `npm update` using the command line in the GUIwrapper directory
 * Install/update [Electron](https://electronjs.org/docs/tutorial/first-app#installing-electron) by running `npm install --save-dev electron@latest` using the command line in the GUIwrapper directory
 * Install/update [Electron-packager](https://github.com/electron-userland/electron-packager) by running `npm install --save-dev electron-packager@latest` using the command line in the GUIwrapper directory
 * Install/update [Electron-installer-windows](https://github.com/electron-userland/electron-installer-windows) by running `npm install --save-dev electron-installer-windows@latest` using the command line in the GUIwrapper directory
