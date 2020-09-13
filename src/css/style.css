@@ -1,32 +1,26 @@
 /* Import Montserrat font */
-@import url("../../Dependencies/Montserrat/fonts/webfonts/Montserrat.css");
-html 
-{
+@import url('../../Dependencies/Montserrat/fonts/webfonts/Montserrat.css');
+html {
     overflow-y: scroll;
 }
 /* Main content area */
-#main 
-{
+#main {
     padding: 32px;
     padding-top: 48px;
-    font-family: 'Montserrat'
+    font-family: 'Montserrat';
 }
 /* Draggable and selectable regions */
-body
-{
+body {
     -webkit-app-region: drag;
     -webkit-user-select: none;
 }
-button 
-{
+button {
     -webkit-app-region: no-drag;
 }
-input
-{
+input {
     -webkit-app-region: no-drag;
 }
-.textfile
-{
+.textfile {
     font-family: monospace;
     -webkit-app-region: no-drag;
     -webkit-user-select: text;
@@ -35,37 +29,22 @@ input
     padding-right: 5px;
     padding-left: 5px;
 }
-.btn-container
-{
+.btn-container {
     display: flex;
     align-items: center;
-    height:32px;
+    height: 32px;
 }
-.btn-container button
-{
+.btn-container button {
     margin-right: 6px;
 }
 /* Scroll bar*/
-::-webkit-scrollbar
-{
-	width: 12px;
-	background-color: #F5F5F5;
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
 }
-::-webkit-scrollbar-track
-{
-    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	border-radius: 10px;
-	background-color: #F5F5F5;
+::-webkit-scrollbar-thumb {
+    background-color: #6c757d;
 }
-::-webkit-scrollbar-thumb
-{
-    border-radius: 10px;
-    box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-	background-color: #6c757d;
-}
-::-webkit-scrollbar-thumb:hover 
-{
-    background: #555; 
+::-webkit-scrollbar-thumb:hover {
+    background: #5a6268;
 }
