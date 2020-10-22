@@ -37,10 +37,10 @@
     "dependencies": {
         "dark-mode-switch": "^1.0.0",
         "electron-squirrel-startup": "^1.0.0",
-        "update-electron-app": "^1.5.0"
+        "update-electron-app": "^2.0.1"
     },
     "devDependencies": {
-        "electron": "^10.1.2",
+        "electron": "^10.1.4",
         "electron-installer-windows": "^3.0.0",
         "electron-packager": "^15.1.0",
         "icon-gen": "^2.0.0"
