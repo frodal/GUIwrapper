@@ -14,6 +14,9 @@ body {
     -webkit-app-region: drag;
     -webkit-user-select: none;
 }
+.lead{
+    margin-bottom: 2.5em;
+}
 button {
     -webkit-app-region: no-drag;
 }
@@ -28,6 +31,7 @@ input {
     width: fit-content;
     padding-right: 5px;
     padding-left: 5px;
+    margin-bottom: 3em;
 }
 .btn-container {
     display: flex;
