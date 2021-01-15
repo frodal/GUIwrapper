@@ -8,7 +8,7 @@ function GetLicense() {
         try {
             licenseString = fs.readFileSync(path.join(__dirname, '../../LICENSE.md'));
         } catch (err) {
-            licenseString = 'Copyright (c) 2019-2020 Bjørn Håkon Frodal';
+            licenseString = 'Copyright (c) 2019-2021 Bjørn Håkon Frodal';
         }
     }
     return licenseString;
