@@ -40,7 +40,7 @@
         "update-electron-app": "^2.0.1"
     },
     "devDependencies": {
-        "electron": "^12.0.0",
+        "electron": "^13.1.1",
         "electron-installer-windows": "^3.0.0",
         "electron-packager": "^15.2.0",
         "icon-gen": "^2.1.0"
