@@ -17,7 +17,7 @@ function createWindow() {
         {
             width: 1280,
             height: 720,
-            titleBarStyle: 'hidden',
+            titleBarStyle: 'default',
             icon: path.join(__dirname, '../../assets/icons/png/64x64.png'),
             show: false,
             backgroundColor: '#FFFFFF',
