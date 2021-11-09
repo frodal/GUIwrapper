@@ -12,6 +12,7 @@
     "version": "0.6.4",
     "author": "Bjørn Håkon Frodal",
     "license": "MIT",
+    "homepage": "https://github.com/frodal/GUIwrapper",
     "repository": {
         "type": "git",
         "url": "https://github.com/frodal/GUIwrapper.git"
@@ -35,12 +36,12 @@
         "gen-icon-mac": "icon-gen --input ./assets/icons/Icon.svg --output ./assets/icons/mac --icns name=icon --report"
     },
     "dependencies": {
-        "dark-mode-switch": "^1.0.0",
+        "about-window": "^1.15.2",
         "electron-squirrel-startup": "^1.0.0",
         "update-electron-app": "^2.0.1"
     },
     "devDependencies": {
-        "electron": "^15.2.0",
+        "electron": "^15.3.1",
         "electron-installer-windows": "^3.0.0",
         "electron-packager": "^15.4.0",
         "icon-gen": "^2.1.0"

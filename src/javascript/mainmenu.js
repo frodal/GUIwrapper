@@ -1,9 +1,10 @@
 const { app, Menu, shell, dialog, nativeImage, BrowserWindow } = require('electron');
 const path = require('path');
-const { GetLicense } = require('./license');
 
 const appName = app.getName();
-const appIcon = nativeImage.createFromPath(path.join(__dirname, '../../assets/icons/png/64x64.png'))
+const appIconPath = path.join(__dirname, '../../assets/icons/png/512x512.png');
+const appIcon = nativeImage.createFromPath(appIconPath)
+const bugReportURL = 'https://github.com/frodal/GUIwrapper/issues';
 
 function CreateMenu() {
     const template = [
@@ -35,11 +36,12 @@ function CreateMenu() {
             submenu: [
                 {
                     label: 'Report Issue',
-                    click() { shell.openExternal('https://github.com/frodal/GUIwrapper/issues') }
+                    click() { shell.openExternal(bugReportURL) }
                 },
                 {
                     label: 'View License',
                     click() {
+                        const { GetLicense } = require('./license');
                         dialog.showMessageBox(BrowserWindow.getFocusedWindow(), {
                             type: "info",
                             title: 'License',
@@ -70,17 +72,10 @@ function CreateMenu() {
                 {
                     label: 'About',
                     click() {
-                        dialog.showMessageBox(BrowserWindow.getFocusedWindow(), {
-                            type: "info",
-                            title: 'About ' + appName,
-                            message: appName + "\n" +
-                                "Version: " + app.getVersion() + "\n\n" +
-                                "Built with \n" +
-                                "Electron: " + process.versions.electron + "\n" +
-                                "Chrome: " + process.versions.chrome + "\n" +
-                                "Node.js: " + process.versions.node,
-                            buttons: ['Ok'],
-                            icon: appIcon
+                        const openAboutWindow = require('about-window').default;
+                        openAboutWindow({
+                            icon_path: appIconPath,
+                            bug_report_url: bugReportURL
                         });
                     }
                 }
