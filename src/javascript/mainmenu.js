@@ -1,6 +1,5 @@
 const { app, Menu, shell, dialog, nativeImage, BrowserWindow } = require('electron');
 const path = require('path');
-const { GetLicense } = require('./license');
 
 const appName = app.getName();
 const appIconPath = path.join(__dirname, '../../assets/icons/png/512x512.png');
@@ -42,6 +41,7 @@ function CreateMenu() {
                 {
                     label: 'View License',
                     click() {
+                        const { GetLicense } = require('./license');
                         dialog.showMessageBox(BrowserWindow.getFocusedWindow(), {
                             type: "info",
                             title: 'License',

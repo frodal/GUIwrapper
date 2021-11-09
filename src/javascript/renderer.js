@@ -3,8 +3,6 @@
 // All of the Node.js APIs are available in this process.
 
 const { ipcRenderer } = require('electron');
-const { execFile } = require('child_process');
-const path = require('path');
 
 const selectProgramBtn = document.getElementById('SelectProgramBtn');
 const startProgramBtn = document.getElementById('StartProgramBtn');
@@ -49,6 +47,7 @@ startProgramBtn.addEventListener('click', (event) => {
             outArea.innerHTML = '';
             exeCommandArgs = [inputArgs.value];
             // Sets the current working directory of the selected program to be its own directory
+            const path = require('path');
             options = { cwd: path.dirname(exePath) };
             // disable start button and enable terminate button when program is running
             startProgramBtn.disabled = true;
@@ -57,6 +56,7 @@ startProgramBtn.addEventListener('click', (event) => {
             runMsg.innerHTML = 'Running';
             try // Try to execute the program and sets a callback for when the program terminates
             {
+                const { execFile } = require('child_process');
                 subProcess = execFile(exePath, exeCommandArgs, options, function (err, data) {
                     if (err !== null && !subProcess.killed) {
                         ipcRenderer.send('open-errorEXE-dialog');
