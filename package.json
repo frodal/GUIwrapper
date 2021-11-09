@@ -37,7 +37,6 @@
     },
     "dependencies": {
         "about-window": "^1.15.2",
-        "dark-mode-switch": "^1.0.0",
         "electron-squirrel-startup": "^1.0.0",
         "update-electron-app": "^2.0.1"
     },
