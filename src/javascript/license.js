@@ -1,5 +1,5 @@
 
-const defaultLicenseString = 'Copyright (c) 2019-2021 Bjørn Håkon Frodal';
+const defaultLicenseString = 'Copyright (c) 2019-2022 Bjørn Håkon Frodal';
 let licenseString = '';
 
 function GetLicense() {
