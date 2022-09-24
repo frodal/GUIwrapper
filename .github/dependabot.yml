@@ -8,10 +8,8 @@ updates:
   - package-ecosystem: "npm" # See documentation for possible values
     directory: "/" # Location of package manifests
     schedule:
-      interval: "weekly"
-      day: "friday"
+      interval: "monthly"
   - package-ecosystem: "gitsubmodule" # See documentation for possible values
     directory: "/" # Location of package manifests
     schedule:
-      interval: "weekly"
-      day: "friday"
+      interval: "monthly"
