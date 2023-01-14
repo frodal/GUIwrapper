@@ -9,7 +9,7 @@
         "desktop applications"
     ],
     "main": "./src/javascript/main.js",
-    "version": "0.7.2",
+    "version": "0.7.3",
     "author": "Bjørn Håkon Frodal",
     "license": "MIT",
     "homepage": "https://github.com/frodal/GUIwrapper",
