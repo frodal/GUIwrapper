@@ -38,7 +38,7 @@
     "dependencies": {
         "about-window": "^1.15.2",
         "electron-squirrel-startup": "^1.0.0",
-        "update-electron-app": "^2.0.1"
+        "update-electron-app": "^3.0.0"
     },
     "devDependencies": {
         "electron": "^25.3.2",
